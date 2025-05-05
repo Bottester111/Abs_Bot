@@ -1,13 +1,14 @@
+import os
 import time
 import requests
 from web3 import Web3
 from telegram import Bot, InlineKeyboardButton, InlineKeyboardMarkup
 
 # --- CONFIGURATION ---
-TELEGRAM_BOT_TOKEN = '7760449431:AAGUBhQByU1qH3GGZqJO3A0G9A9tQMBrr64'
+TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')  # 7760449431:AAGUBhQByU1qH3GGZqJO3A0G9A9tQMBrr64'
 TELEGRAM_CHAT_IDS = ['-1002641458611', '-1002611461038']
-INFURA_URL = 'https://api.mainnet.abs.xyz'
-MOONSHOT_CONTRACT_ADDRESS = '0x0D6848e39114abE69054407452b8aaB82f8a44BA'
+INFURA_URL = os.environ.get('INFURA_URL')  # https://api.mainnet.abs.xyz'
+MOONSHOT_CONTRACT_ADDRESS = os.environ.get('MOONSHOT_CONTRACT_ADDRESS')  # 0x0D6848e39114abE69054407452b8aaB82f8a44BA'
 DEXSCREENER_API = 'https://api.dexscreener.com/latest/dex/tokens/'
 
 ERC20_ABI = [
